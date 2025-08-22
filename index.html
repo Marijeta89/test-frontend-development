@@ -3,58 +3,105 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
+    <title>Animation</title>
+
     <style>
-
-        a[href^="https://www.google.com"] {
-            color: green;
+        body {
+            background-color: #050210;
+            height: 100vh;
         }
 
-        a[target = "_blank"] {
-            color: red;
+        .outside {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 30%;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+
+            border-radius: 100%;
+            animation: rotate 1s infinite linear;
+
         }
 
-        #second-div > p:nth-child(odd) {
-            color: blue;
+        .inside {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: #050210;
+            border-radius: 100%;
+
         }
 
-        #second-div > p:nth-child(even) {
-            color: red;
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
-        #first-div > p::after{
-            content: "-NEW";
-            color: yellow;
+        .outside::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            bottom: -30px;
+            left: -30px;
+            right: -30px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            filter: blur(75px);
+
+            border-radius: 100%;
+            animation: rotate 1s infinite linear;
         }
 
-        #first-div + p + p:hover {
-            font-style: italic;
+        .inside::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            width: 50px;
+            height: 50px;
+            background-color: #1d1d1e;
+            border-radius: 100%;
+
+            animation: pulse 2s ease-out infinite;
         }
 
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.1);
+                opacity: 0.9;
+                filter: brightness(1.2);
+            }
+
+            70% {
+                transform: translate(-50%, -50%) scale(6);
+                opacity: 0;
+                filter: brightness(2);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(0.1);
+                opacity: 0;
+            }
+        }
     </style>
+
 </head>
 
 <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/">Google</a>
-    <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
-    <div id="first-div">
-        <h2>Subheading</h2>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p>Paragraph 4</p>
-            <p>Paragraph 5</p>
-            <p>Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
-        </div>
+    <div class="outside">
+        <div class="inside"></div>
     </div>
-    <p>Paragraph 9</p>
-    <p>Paragraph 10</p>
 </body>
 
 </html>
