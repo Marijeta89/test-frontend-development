@@ -3,104 +3,170 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Animation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Galerija</title>
 
     <style>
         body {
-            background-color: #050210;
-            height: 100vh;
+            margin: 0;
+            background-color: rgb(31, 30, 30);
+            font-family: sans-serif;
+            color: rgb(214, 231, 231);
+            padding: 25px;
         }
 
-        .outside {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: 30%;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
-
-            border-radius: 100%;
-            animation: rotate 1s infinite linear;
-
+        .gallery {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         }
 
-        .inside {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background: #050210;
-            border-radius: 100%;
-
+        .item {
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            overflow: hidden;
         }
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+        .item-top {
+            background-color: rgb(134, 134, 255);
+            height: 120px;
+            width: 100%;
+            background-image: url("placeholder-image.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
         }
 
-        .outside::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            bottom: -30px;
-            left: -30px;
-            right: -30px;
-            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
-            filter: blur(75px);
-
-            border-radius: 100%;
-            animation: rotate 1s infinite linear;
-        }
-
-        .inside::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.1);
-            width: 50px;
-            height: 50px;
-            background-color: #1d1d1e;
-            border-radius: 100%;
-
-            animation: pulse 2s ease-out infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: translate(-50%, -50%) scale(0.1);
-                opacity: 0.9;
-                filter: brightness(1.2);
-            }
-
-            70% {
-                transform: translate(-50%, -50%) scale(6);
-                opacity: 0;
-                filter: brightness(2);
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(0.1);
-                opacity: 0;
-            }
+        .item-bottom {
+            background-color: white;
+            text-align: center;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
         }
     </style>
-
 </head>
 
 <body>
-    <div class="outside">
-        <div class="inside"></div>
+    <h2>Gallery Heading</h2>
+
+    <div class="gallery">
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+        <div class="item">
+            <div class="item-top"></div>
+            <div class="item-bottom">Image Title</div>
+        </div>
+
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae
+            lorem a arcu laoreet finibus. Donec id nisi at elit lacinia hendrerit.
+            Curabitur vel leo sed magna vestibulum accumsan. Phasellus fringilla
+            turpis a diam luctus, in facilisis nisl scelerisque.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae
+            lorem a arcu laoreet finibus. Donec id nisi at elit lacinia hendrerit.
+            Curabitur vel leo sed magna vestibulum accumsan. Phasellus fringilla
+            turpis a diam luctus, in facilisis nisl scelerisque.
+        </div>
+
+
+
+    </div>
     </div>
 </body>
 
